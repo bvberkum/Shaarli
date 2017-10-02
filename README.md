@@ -25,6 +25,17 @@ _It is designed to be personal (single-user), fast and handy._
 - [Change log](CHANGELOG.md)
 - [Bugs/Feature requests/Discussion](https://github.com/shaarli/Shaarli/issues/)
 
+### Docker
+To begin with a temporary container, keeping the data (config, storage):
+
+```
+MY_SHAARLI_VOLUME=$(cd /path/to/shaarli/data/ && pwd -P)
+docker run -td --rm \
+         -p 8000:80 \
+         -v $MY_SHAARLI_VOLUME:/var/www/shaarli/data \
+         shaarli/shaarli
+```
+
 ### Demo
 
 You can use this [public demo instance of Shaarli](https://demo.shaarli.org).
